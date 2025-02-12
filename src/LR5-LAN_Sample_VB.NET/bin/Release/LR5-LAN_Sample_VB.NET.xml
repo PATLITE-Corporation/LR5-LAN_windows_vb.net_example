@@ -1,0 +1,75 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+LR5-LAN_Sample_VB.NET
+</name>
+</assembly>
+<members>
+<member name="T:LR5_LAN_Sample_VB.NET.My.Resources.Resources">
+<summary>
+  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+</summary>
+</member>
+<member name="P:LR5_LAN_Sample_VB.NET.My.Resources.Resources.ResourceManager">
+<summary>
+  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+</summary>
+</member>
+<member name="P:LR5_LAN_Sample_VB.NET.My.Resources.Resources.Culture">
+<summary>
+  すべてについて、現在のスレッドの CurrentUICulture プロパティをオーバーライドします
+  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member>
+<member name="M:LR5_LAN_Sample_VB.NET.Main.SocketOpen(System.String,System.Int32)">
+ <summary>
+ Connect to LR5-LAN
+ </summary>
+ <param name="ip">IP address</param>
+ <param name="port">port number</param>
+ <returns>success: 0, failure: non-zero</returns>
+</member>
+<member name="M:LR5_LAN_Sample_VB.NET.Main.SocketClose">
+ <summary>
+ Close the socket.
+ </summary>
+</member>
+<member name="M:LR5_LAN_Sample_VB.NET.Main.SendCommand(System.Byte[],System.Byte[]@)">
+ <summary>
+ Send command
+ </summary>
+ <param name="sendData">send data</param>
+ <param name="recvData">received data</param>
+ <returns>success: 0, failure: non-zero</returns>
+</member>
+<member name="M:LR5_LAN_Sample_VB.NET.Main.PNS_RunControlCommand(LR5_LAN_Sample_VB.NET.Main.PNS_RUN_CONTROL_DATA)">
+ <summary>
+ Send operation control command for PNS command
+ Each color of the LED unit and the buzzer can be controlled by the pattern specified in the data area
+ Operates with the color and buzzer set in the signal light mode
+ </summary>
+ <param name="runControlData">
+ Red/amber/green/blue/white LED unit operation patterns, buzzer mode
+ Pattern of LED unit (off: 0, on: 1, blinking(slow): 2, blinking(medium): 3, blinking(high): 4, flashing single: 5, flashing double: 6, flashing triple: 7, no change: 9)
+ Pattern of buzzer (stop: 0, ring: 1, no change: 9)
+ </param>
+ <returns>success: 0, failure: non-zero</returns>
+</member>
+<member name="M:LR5_LAN_Sample_VB.NET.Main.PNS_ClearCommand">
+ <summary>
+ Send clear command for PNS command
+ Turn off the LED unit and stop the buzzer
+ </summary>
+ <returns>success: 0, failure: non-zero</returns>
+</member>
+<member name="M:LR5_LAN_Sample_VB.NET.Main.PNS_GetDataCommand(LR5_LAN_Sample_VB.NET.Main.PNS_STATUS_DATA@)">
+ <summary>
+ Send status acquisition command for PNS command
+ LED unit and buzzer status can be acquired
+ </summary>
+ <param name="statusData">Received data of status acquisition command (status of LED unit and buzzer)</param>
+ <returns>Success: 0, failure: non-zero</returns>
+</member>
+</members>
+</doc>
